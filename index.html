@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Billboards Music ORG Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <style media="screen">
       .subheader{
         margin-left: 20px;
@@ -25,655 +26,1849 @@
       table:hover .hiddenTableCol{
         display: table-cell;
       }
+      table {width: 100% !important;}
+      .tab-pane {margin-top: 20px;}
     </style>
   </head>
   <body style="font-size: 0.8em">
-    <div class="container">
-      <h3>
-        ROUND RESULTS
-        <span class="subheader">Fri, 18-03-2022</span>
-      </h3>
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Placement</th>
-            <th>Artist</th>
-            <th>Song</th>
-            <th>Mandi</th>
-            <th>Fred</th>
-            <th>Craig</th>
-            <th>Zach</th>
-            <th>Average</th>
-                      </tr>
-        </thead>
-        <tbody>
-                      <tr>
-              <td><h3>1</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
-                majiko              </td>
-              <td>Morrow</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>2</td>
-              <td class="small text-secondary">2.0</td>
-                          </tr>
-                        <tr>
-              <td><h3>2</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
-                Billie Eilish              </td>
-              <td>ocean eyes</td>
-              <td>6</td>
-              <td>5</td>
-              <td>1</td>
-              <td>3</td>
-              <td class="small text-secondary">3.8</td>
-                          </tr>
-                        <tr>
-              <td><h3>3</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
-                Grimes              </td>
-              <td>Delete Forever</td>
-              <td>5</td>
-              <td>7</td>
-              <td>2</td>
-              <td>6</td>
-              <td class="small text-secondary">5.0</td>
-                          </tr>
-                        <tr>
-              <td><h3>4</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
-                Paramore              </td>
-              <td>Hate To See Your Heart Break</td>
-              <td>3</td>
-              <td>4</td>
-              <td>6</td>
-              <td>8</td>
-              <td class="small text-secondary">5.3</td>
-                          </tr>
-                        <tr>
-              <td><h3>5</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
-                Jessie Reyez              </td>
-              <td>Sola</td>
-              <td>10</td>
-              <td>1</td>
-              <td>9</td>
-              <td>1</td>
-              <td class="small text-secondary">5.3</td>
-                          </tr>
-                        <tr>
-              <td><h3>6</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
-                Utada              </td>
-              <td>誰にも言わない</td>
-              <td>2</td>
-              <td>6</td>
-              <td>5</td>
-              <td>10</td>
-              <td class="small text-secondary">5.8</td>
-                          </tr>
-                        <tr>
-              <td><h3>7</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
-                OneRepublic              </td>
-              <td>Lullaby</td>
-              <td>12</td>
-              <td>3</td>
-              <td>4</td>
-              <td>4</td>
-              <td class="small text-secondary">5.8</td>
-                          </tr>
-                        <tr>
-              <td><h3>8</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
-                Dua Lipa              </td>
-              <td>Golden Slumbers</td>
-              <td>4</td>
-              <td>11</td>
-              <td>7</td>
-              <td>7</td>
-              <td class="small text-secondary">7.3</td>
-                          </tr>
-                        <tr>
-              <td><h3>9</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
-                Florence + The Machine              </td>
-              <td>Sky Full Of Song</td>
-              <td>8</td>
-              <td>9</td>
-              <td>10</td>
-              <td>11</td>
-              <td class="small text-secondary">9.5</td>
-                          </tr>
-                        <tr>
-              <td><h3>10</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
-                Bjork              </td>
-              <td>Future Forever</td>
-              <td>11</td>
-              <td>14</td>
-              <td>11</td>
-              <td>5</td>
-              <td class="small text-secondary">10.3</td>
-                          </tr>
-                        <tr>
-              <td><h3>11</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
-                The Weeknd              </td>
-              <td>I Feel It Coming</td>
-              <td>7</td>
-              <td>10</td>
-              <td>12</td>
-              <td>13</td>
-              <td class="small text-secondary">10.5</td>
-                          </tr>
-                        <tr>
-              <td><h3>12</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
-                Kali Uchis              </td>
-              <td>honey baby</td>
-              <td>13</td>
-              <td>13</td>
-              <td>8</td>
-              <td>9</td>
-              <td class="small text-secondary">10.8</td>
-                          </tr>
-                        <tr>
-              <td><h3>13</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
-                SZA              </td>
-              <td>Pretty Little Birds</td>
-              <td>9</td>
-              <td>8</td>
-              <td>13</td>
-              <td>14</td>
-              <td class="small text-secondary">11.0</td>
-                          </tr>
-                        <tr>
-              <td><h3>14</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
-                TWICE              </td>
-              <td>Alcohol-Free</td>
-              <td>14</td>
-              <td>12</td>
-              <td>14</td>
-              <td>12</td>
-              <td class="small text-secondary">13.0</td>
-                          </tr>
-                        <tr>
-              <td><h3>15</h3></td>
-              <td>
-                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
-                Dreamcatcher              </td>
-              <td>NO SUBMISSION</td>
-              <td>15</td>
-              <td>15</td>
-              <td>15</td>
-              <td>15</td>
-              <td class="small text-secondary">15.0</td>
-                          </tr>
-                    </tbody>
-      </table>
-      <hr>
-      <h3>
-        CAN'T USE ARTISTS
-        <span class="subheader">These artists can't be used coming into the game at this time.</span>
-      </h3>
-      <div class="row">
-                  <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Billie Eilish</h5>
+    <div class="container mt-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Round History</a>
+          <ul class="dropdown-menu">
+                          <li>
+                <a class="dropdown-item active"  data-bs-toggle="tab" href="#tab-Wed30032022">Last Round  Wed, 30-03-2022</a>
+              </li>
+                            <li>
+                <a class="dropdown-item "  data-bs-toggle="tab" href="#tab-Sun27032022"> Sun, 27-03-2022</a>
+              </li>
+                            <li>
+                <a class="dropdown-item "  data-bs-toggle="tab" href="#tab-Wed23032022"> Wed, 23-03-2022</a>
+              </li>
+                            <li>
+                <a class="dropdown-item "  data-bs-toggle="tab" href="#tab-Fri18032022"> Fri, 18-03-2022</a>
+              </li>
+                            <li>
+                <a class="dropdown-item "  data-bs-toggle="tab" href="#tab-Mon14032022"> Mon, 14-03-2022</a>
+              </li>
+                        </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#tab-artists">Can't Use Artists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#tab-songs">Can't Use Songs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#tab-artist-stats">Artist Stats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#tab-player-stats">Player Stats</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+                  <div class="tab-pane active" id="tab-Wed30032022">
+            <h3>
+                              Last Round
+                <span class="subheader"><strong>Feel-Good Songs</strong> - Wed, 30-03-2022</span>
+                            </h3>
+            <table class="table table-striped table-hover" data-paging="false" data-searching="false">
+              <thead>
+                <tr>
+                  <th>Placement</th>
+                  <th>Artist</th>
+                  <th>Song</th>
+                  <th>Mandi</th>
+                  <th>Fred</th>
+                  <th>Craig</th>
+                  <th>Zach</th>
+                  <th data-sorting="false">Average</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                                  <tr>
+                    <td><h3>1</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704662369730590/cast_pink.png" class="smallAvatar">
+                      P!nk                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1gv4xPanImH17bKZ9rOveR?si=d26c9e0ab8b64e49" target="_blank">Raise Your Glass</a>
+                    </td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="small text-secondary">2.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>2</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7D49Iig0avHre9RFSUMkd2?si=e69832ec993b44d7" target="_blank">I Lived</a>
+                    </td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td class="small text-secondary">5.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>3</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7ef4DlsgrMEH11cDZd32M6?si=4564d332b3464aee" target="_blank">One Kiss</a>
+                    </td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>10</td>
+                    <td class="small text-secondary">5.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>4</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/6cC9RY7MoUx5z3aHjDTNI6?si=f27c546f04b64152" target="_blank">Never Let Me Go</a>
+                    </td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>5</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0jjHmmFPqKM6nI8EIAxgYB?si=9b12020dd3ac4e07" target="_blank">Body Count</a>
+                    </td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>13</td>
+                    <td>3</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>6</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/2KnuaZYoGzDoHiBTNYOTXG?si=ee0a27cdaad84284" target="_blank">Billie Bossa Nova</a>
+                    </td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td class="small text-secondary">7.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>7</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0CALOqrkXAE7WB2nyIATLk?si=38e23e9c98584183" target="_blank">Face My Fears</a>
+                    </td>
+                    <td>2</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td class="small text-secondary">7.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>8</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704624902045757/cast_celine_dion.png" class="smallAvatar">
+                      Celine Dion                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/2FTZeRHQ4gRPViPMpWL9uX?si=847fac301091424e" target="_blank">I&#039;m Alive</a>
+                    </td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td class="small text-secondary">8.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>9</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3hgzEGrm5iTY6pkgJ827qX?si=ef5ba58d67e74b0b" target="_blank">Anklebiters</a>
+                    </td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>13</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>10</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4qwSJrEbIzkRrT8XHgO6RB?si=1e0e3b1174c54dd8" target="_blank">Kitto Wasurenai</a>
+                    </td>
+                    <td>7</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>11</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>11</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/36YCdzT57us0LhDmCYtrNE?si=afa5335acdbc4ea9" target="_blank">Rockin&#039;</a>
+                    </td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td class="small text-secondary">9.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>12</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0Ui4S8sgBCXv4Ao1HhTTun?si=f6a935edc7d14916" target="_blank">aguardiente y lim&oacute;n</a>
+                    </td>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td class="small text-secondary">9.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>13</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/957014230572343357/cast_the_story_so_far.png" class="smallAvatar">
+                      The Story So Far                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5JCD9hxovnHVF72WXt7App?si=e7e1725f7ef24099" target="_blank">Take Me As You Please</a>
+                    </td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>12</td>
+                    <td class="small text-secondary">9.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>14</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/01dQHUYz6EerSF6JQDolCC?si=7592cc0c637a47d2" target="_blank">Butterfly</a>
+                    </td>
+                    <td>14</td>
+                    <td>13</td>
+                    <td>3</td>
+                    <td>14</td>
+                    <td class="small text-secondary">11.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>15</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="smallAvatar">
+                      Panic! At The Disco                    </td>
+                    <td>
+                      <a href="https://open.spotify.com" target="_blank">NO SUBMISSION</a>
+                    </td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td class="small text-secondary">15.0</td>
+                                      </tr>
+                                </tbody>
+            </table>
           </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Bjork</h5>
+                    <div class="tab-pane " id="tab-Sun27032022">
+            <h3>
+                              Sun, 27-03-2022                <span class="subheader"><strong>Love Songs</strong></span>
+                            </h3>
+            <table class="table table-striped table-hover" data-paging="false" data-searching="false">
+              <thead>
+                <tr>
+                  <th>Placement</th>
+                  <th>Artist</th>
+                  <th>Song</th>
+                  <th>Mandi</th>
+                  <th>Fred</th>
+                  <th>Craig</th>
+                  <th>Zach</th>
+                  <th data-sorting="false">Average</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                                  <tr>
+                    <td><h3>1</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5XSU59wtE5CRCAEyHmmGy4?si=43061ff6c76f413a" target="_blank">Stand By Me</a>
+                    </td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td class="small text-secondary">3.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>2</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7JIuqL4ZqkpfGKQhYlrirs?si=9b4b4de986854fa6" target="_blank">The Only Exception</a>
+                    </td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>13</td>
+                    <td>1</td>
+                    <td class="small text-secondary">4.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>3</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704624902045757/cast_celine_dion.png" class="smallAvatar">
+                      Celine Dion                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5kK1Iru9ogP3Iy1zsANU1n?si=d88cf8bc1c5e45c3" target="_blank">The Power Of Love</a>
+                    </td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td class="small text-secondary">4.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>4</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5thGRKzxnhbB9nE9tE8MNy?si=11f8f8c23c154544" target="_blank">Kimi Ni Saigo No Kuchizuke</a>
+                    </td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td class="small text-secondary">5.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>5</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </td>
+                    <td>
+                      <a href="https://drive.google.com/file/d/1wXM1tWaX24L7Z3ETzN1Y-241cK96uBKc/view" target="_blank">Love Is Religion</a>
+                    </td>
+                    <td>5</td>
+                    <td>12</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td class="small text-secondary">5.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>6</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1WsEgieHsWWndAzLkmV105?si=c98f39214c6547e9" target="_blank">hostage</a>
+                    </td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td class="small text-secondary">6.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>7</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="smallAvatar">
+                      Panic! At The Disco                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5VL7pScLlKe4MbB8EAivgA?si=a1910da2486a4795" target="_blank">Always</a>
+                    </td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td class="small text-secondary">8.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>8</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4frLb7nWtsz2ymBE6k2GRP?si=35afd2622ac341da" target="_blank">Earned It</a>
+                    </td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>15</td>
+                    <td>2</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>9</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0T9un1tCka7l3lwsJmmLLU?si=f53a632d61d04bbe" target="_blank">FEELS LIKE HOME</a>
+                    </td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td class="small text-secondary">8.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>10</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/2kSb3wYSOV996xA2NSmpck?si=bfd27186768a4607" target="_blank">Meltin</a>
+                    </td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td class="small text-secondary">9.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>11</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704662369730590/cast_pink.png" class="smallAvatar">
+                      P!nk                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7mB6BFVD1WQccVTIan9aWw?si=1aa5f02625d34871" target="_blank">Love Song</a>
+                    </td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td class="small text-secondary">9.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>12</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4KANJH1baadr3U7XsVbM17?si=16f9449228b945a3" target="_blank">Something I Need</a>
+                    </td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td class="small text-secondary">10.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>13</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7ywiYMNYjv4fDYgz489tjR?si=2330d3243a4843b5" target="_blank">This Is Love</a>
+                    </td>
+                    <td>11</td>
+                    <td>15</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td class="small text-secondary">11.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>14</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785878541664306/cast_cherry_galzerr.png" class="smallAvatar">
+                      Cherry Glazerr                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0BFGclich9JXVCAS79P793?si=707cce54244c4ee0" target="_blank">Rabbit Hole</a>
+                    </td>
+                    <td>15</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>13</td>
+                    <td class="small text-secondary">11.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>15</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4mlkj14AjRMGnyYlcEbZlB?si=facfbb1cb68e4987" target="_blank">IDORU</a>
+                    </td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td class="small text-secondary">14.0</td>
+                                      </tr>
+                                </tbody>
+            </table>
           </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Dreamcatcher</h5>
+                    <div class="tab-pane " id="tab-Wed23032022">
+            <h3>
+                              Wed, 23-03-2022                <span class="subheader"><strong>Weather</strong></span>
+                            </h3>
+            <table class="table table-striped table-hover" data-paging="false" data-searching="false">
+              <thead>
+                <tr>
+                  <th>Placement</th>
+                  <th>Artist</th>
+                  <th>Song</th>
+                  <th>Mandi</th>
+                  <th>Fred</th>
+                  <th>Craig</th>
+                  <th>Zach</th>
+                  <th data-sorting="false">Average</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                                  <tr>
+                    <td><h3>1</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3FofyiPy617IUwGbx9vtqW?si=578ecee00f154eca" target="_blank">AM</a>
+                    </td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td class="small text-secondary">3.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>2</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5r43qanLhUCdBj8HN3fa6B?si=552fa18895654138" target="_blank">Sunshine</a>
+                    </td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td class="small text-secondary">4.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>3</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1otG6j1WHNvl9WgXLWkHTo?si=1d93f24c6e344ae8" target="_blank">After The Storm</a>
+                    </td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td class="small text-secondary">5.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>4</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0tMSssfxAL2oV8Vri0mFHE?si=cd9f1c8a62954240" target="_blank">listen before i go</a>
+                    </td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>5</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/2owXQZEmYfwbUXzaliVSpj?si=80c6a3053bb44d56" target="_blank">When It Rains</a>
+                    </td>
+                    <td>7</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>6</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1T0Kkq1Oio6nHVhenMQeDR?si=8ce221c15adf4adf" target="_blank">Hurricane Drunk</a>
+                    </td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>7</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="smallAvatar">
+                      Panic! At The Disco                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/49SL9f1Kz73p0bzsNPTY4l?si=246d99fb7e9443c6" target="_blank">Northern Downpour</a>
+                    </td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td class="small text-secondary">6.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>8</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/6aePTKIPrxeyvfrG7hsCcR?si=1c587c04e92e4cbd" target="_blank">虹色バス</a>
+                    </td>
+                    <td>9</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>9</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
+                      SZA                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0Kz9aGVgFvndWkcaiylIt5?si=8296e6e40bdd4fc5" target="_blank">Warm Winds</a>
+                    </td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>10</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0V4l4GQhgnWQGtCWpvA7va?si=39b2c78e776d49cf" target="_blank">Crew Love</a>
+                    </td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td class="small text-secondary">8.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>11</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7qQUyJYrHdAVxKeZBy6fyf?si=8e0eeafd40a040a8" target="_blank">BEFORE LOVE CAME TO KILL US</a>
+                    </td>
+                    <td>5</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td class="small text-secondary">9.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>12</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1aL6wkVeoR41DqDpVN7Gl2?si=f7a29dcc9f6b41ec" target="_blank">Player Of Games</a>
+                    </td>
+                    <td>11</td>
+                    <td>13</td>
+                    <td>3</td>
+                    <td>13</td>
+                    <td class="small text-secondary">10.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>13</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5N4erncE7kuUccm7zEmwzk?si=fe3e93cd3e184239" target="_blank">Electricity</a>
+                    </td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>14</td>
+                    <td class="small text-secondary">10.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>14</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785878541664306/cast_cherry_galzerr.png" class="smallAvatar">
+                      Cherry Glazerr                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0dbNBaBT018rXYpNf03Oya?si=baf40d2e28f544f1" target="_blank">Teenage Girl</a>
+                    </td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>13</td>
+                    <td>12</td>
+                    <td class="small text-secondary">11.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>15</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
+                      Bjork                    </td>
+                    <td>
+                      <a href="NO_SUBMISSION" target="_blank">NO SUBMISSION</a>
+                    </td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td class="small text-secondary">15.0</td>
+                                      </tr>
+                                </tbody>
+            </table>
           </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Dua Lipa</h5>
+                    <div class="tab-pane " id="tab-Fri18032022">
+            <h3>
+                              Fri, 18-03-2022                <span class="subheader"><strong>Relaxing Songs</strong></span>
+                            </h3>
+            <table class="table table-striped table-hover" data-paging="false" data-searching="false">
+              <thead>
+                <tr>
+                  <th>Placement</th>
+                  <th>Artist</th>
+                  <th>Song</th>
+                  <th>Mandi</th>
+                  <th>Fred</th>
+                  <th>Craig</th>
+                  <th>Zach</th>
+                  <th data-sorting="false">Average</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                                  <tr>
+                    <td><h3>1</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/6mk25qY1l2ywnmt3TArrNf?si=1cb23c7626cd4f47" target="_blank">Morrow</a>
+                    </td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td class="small text-secondary">2.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>2</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/7hDVYcQq6MxkdJGweuCtl9?si=2119afcde7e14a8e" target="_blank">ocean eyes</a>
+                    </td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td class="small text-secondary">3.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>3</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/71J2rawCGulCAyTMtNY3Ej?si=50511c85d9da4e69" target="_blank">Delete Forever</a>
+                    </td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td class="small text-secondary">5.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>4</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3dkF3fiPOHbaV3lPwneGKN?si=eea87d2a908b4850" target="_blank">Hate To See Your Heart Break</a>
+                    </td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td class="small text-secondary">5.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>5</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3doK7YkkgMtfD6qoXCkTWh?si=ade0790736a84bc0" target="_blank">Sola</a>
+                    </td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td class="small text-secondary">5.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>6</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4Azd18vgpAqlvrcb3KAHJo?si=d8496f329de2472e" target="_blank">誰にも言わない</a>
+                    </td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td class="small text-secondary">5.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>7</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1QijFEB8TfVgDHdBqPczo6?si=6640f18261614a7f" target="_blank">Lullaby</a>
+                    </td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td class="small text-secondary">5.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>8</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1cqXa5zVzhrrIm7QyQD1as?si=2264796c4dc34903" target="_blank">Golden Slumbers</a>
+                    </td>
+                    <td>4</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td class="small text-secondary">7.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>9</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/64fzn2ewOdSH57wrxTPGov?si=bf1eb0e296b14247" target="_blank">Sky Full Of Song</a>
+                    </td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td class="small text-secondary">9.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>10</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
+                      Bjork                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4OZ1CGo6t8VmbBTrW3m9oH?si=26e62e97aa94400c" target="_blank">Future Forever</a>
+                    </td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td class="small text-secondary">10.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>11</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3dhjNA0jGA8vHBQ1VdD6vV?si=4755e1bbbdc24b45" target="_blank">I Feel It Coming</a>
+                    </td>
+                    <td>7</td>
+                    <td>10</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td class="small text-secondary">10.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>12</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3rPaugbuZuIKJpVnF3b1RK?si=964efa070527483b" target="_blank">honey baby</a>
+                    </td>
+                    <td>13</td>
+                    <td>13</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td class="small text-secondary">10.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>13</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
+                      SZA                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1IgePMOW0qEe1AViWgkal9?si=d4de2c65b0674b82" target="_blank">Pretty Little Birds</a>
+                    </td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td class="small text-secondary">11.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>14</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
+                      TWICE                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0BTaaKT4RMbs5M73tOHX5Y?si=8e9bf91094594471" target="_blank">Alcohol-Free</a>
+                    </td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td class="small text-secondary">13.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>15</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
+                      Dreamcatcher                    </td>
+                    <td>
+                      <a href="NO SUBMISSION" target="_blank">NO SUBMISSION</a>
+                    </td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td class="small text-secondary">15.0</td>
+                                      </tr>
+                                </tbody>
+            </table>
           </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Florence + The Machine</h5>
+                    <div class="tab-pane " id="tab-Mon14032022">
+            <h3>
+                              Mon, 14-03-2022                <span class="subheader"><strong>Party Songs</strong></span>
+                            </h3>
+            <table class="table table-striped table-hover" data-paging="false" data-searching="false">
+              <thead>
+                <tr>
+                  <th>Placement</th>
+                  <th>Artist</th>
+                  <th>Song</th>
+                  <th>Mandi</th>
+                  <th>Fred</th>
+                  <th>Craig</th>
+                  <th>Zach</th>
+                  <th data-sorting="false">Average</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                                  <tr>
+                    <td><h3>1</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1yjY7rpaAQvKwpdUliHx0d?si=402a0cdf81eb47b0" target="_blank">Still into You</a>
+                    </td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td class="small text-secondary">4.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>2</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3KHFTriqYyogE8zZkWRf7u?si=8e8c6c2e563e4628" target="_blank">On And On</a>
+                    </td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td class="small text-secondary">5.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>3</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/6IRdLKIyS4p7XNiP8r6rsx?si=acf6f1d609a24cb0" target="_blank">all the good girls go to hell</a>
+                    </td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td class="small text-secondary">6.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>4</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW?si=da64431fef5e4861" target="_blank">Physical</a>
+                    </td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td class="small text-secondary">6.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>5</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3WXhshrs1fzwF3rQE399Gq?si=0624eb0a3c5d4c67" target="_blank">Kill V. Maim</a>
+                    </td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td>13</td>
+                    <td class="small text-secondary">6.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>6</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
+                      SZA                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/748mdHapucXQri7IAO8yFK?si=4f8a60c6c2654e7a" target="_blank">Kiss Me More</a>
+                    </td>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>15</td>
+                    <td>3</td>
+                    <td class="small text-secondary">7.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>7</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/5e1XbU08FpBzNaK1XdKyvu?si=60f1b627d65e4fe5" target="_blank">DOPE</a>
+                    </td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td class="small text-secondary">7.8</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>8</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1c478uMN61yF2JOXXEtsdw?si=2da5572c71d5448b" target="_blank">Spectrum (Say My Name) Calvin Harris Remix</a>
+                    </td>
+                    <td>13</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td class="small text-secondary">8.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>9</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/63jdQWkfS4nZZYGdnxTKOW?si=6efe8208477c4377" target="_blank">MONSTER PARTY</a>
+                    </td>
+                    <td>7</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td class="small text-secondary">8.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>10</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/41SwdQIX8Hy2u6fuEDgvWr?si=757e07ec069e4003" target="_blank">10%</a>
+                    </td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td>14</td>
+                    <td>2</td>
+                    <td class="small text-secondary">8.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>11</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/1hZk9dktp4yRFTm0TrycuH?si=3e3072e5923b4909" target="_blank">If I Lose Myself - Alesso vs OneRepublic</a>
+                    </td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>12</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
+                      TWICE                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/4DYIDSMIB5y2UmZFv9fxeX?si=dd29d1e12ffd4213" target="_blank">Dance The Night Away</a>
+                    </td>
+                    <td>2</td>
+                    <td>13</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td class="small text-secondary">8.5</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>13</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
+                      Dreamcatcher                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/3L74uwShK0JqEUZ5Y2JoDW?si=43a60122ae56484d" target="_blank">BEcause</a>
+                    </td>
+                    <td>5</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>15</td>
+                    <td class="small text-secondary">9.0</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>14</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/2vgUijXOTRMnWXDtvgMp2b?si=50883b9867cb4149" target="_blank">Take My Breath</a>
+                    </td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td class="small text-secondary">11.3</td>
+                                      </tr>
+                                    <tr>
+                    <td><h3>15</h3></td>
+                    <td>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
+                      Bjork                    </td>
+                    <td>
+                      <a href="https://open.spotify.com/track/0X0LTI0MQG9S3FLSUvjrj5?si=9457d5feab144883" target="_blank">Big Time Sensuality</a>
+                    </td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td class="small text-secondary">14.3</td>
+                                      </tr>
+                                </tbody>
+            </table>
           </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Grimes</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Jessie Reyez</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Kali Uchis</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">OneRepublic</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Paramore</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">SZA</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">TWICE</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">The Weeknd</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">Utada</h5>
-          </div>
-                    <div class="col-2 mt-5 text-center">
-            <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="largeAvatar">
-            <h5 class="mt-4 mb-4">majiko</h5>
-          </div>
-                </div>
-      <hr>
-      <h3>
-        CAN'T USE SONGS
-        <span class="subheader">These songs can't be used in the game at this time.</span>
-      </h3>
-      <div class="row">
-                  <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
-              Billie Eilish            </h4>
-            <ul class="mb-5">
-                              <li>
-                  all the good girls go to hell                </li>
-                                <li>
-                  ocean eyes                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
-              Bjork            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Big Time Sensuality                </li>
-                                <li>
-                  Future Forever                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
-              Dreamcatcher            </h4>
-            <ul class="mb-5">
-                              <li>
-                  BEcause                </li>
-                                <li>
-                  NO SUBMISSION                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
-              Dua Lipa            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Golden Slumbers                </li>
-                                <li>
-                  Physical                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
-              Florence + The Machine            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Sky Full Of Song                </li>
-                                <li>
-                  Spectrum (Say My Name) Calvin Harris Remix                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
-              Grimes            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Delete Forever                </li>
-                                <li>
-                  Kill V. Maim                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
-              Jessie Reyez            </h4>
-            <ul class="mb-5">
-                              <li>
-                  DOPE                </li>
-                                <li>
-                  Sola                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
-              Kali Uchis            </h4>
-            <ul class="mb-5">
-                              <li>
-                  10%                </li>
-                                <li>
-                  honey baby                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
-              OneRepublic            </h4>
-            <ul class="mb-5">
-                              <li>
-                  If I Lose Myself - Alesso vs OneRepublic                </li>
-                                <li>
-                  Lullaby                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
-              Paramore            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Hate To See Your Heart Break                </li>
-                                <li>
-                  Still into You                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
-              SZA            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Kiss Me More                </li>
-                                <li>
-                  Pretty Little Birds                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
-              TWICE            </h4>
-            <ul class="mb-5">
-                              <li>
-                  Alcohol-Free                </li>
-                                <li>
-                  Dance The Night Away                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
-              The Weeknd            </h4>
-            <ul class="mb-5">
-                              <li>
-                  I Feel It Coming                </li>
-                                <li>
-                  Take My Breath                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
-              Utada            </h4>
-            <ul class="mb-5">
-                              <li>
-                  On And On                </li>
-                                <li>
-                  誰にも言わない                </li>
-                            </ul>
-          </div>
-                    <div class="col-3">
-            <h4 class="mt-5">
-              <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
-              majiko            </h4>
-            <ul class="mb-5">
-                              <li>
-                  MONSTER PARTY                </li>
-                                <li>
-                  Morrow                </li>
-                            </ul>
-          </div>
-                </div>
-      <hr>
-      <h3>
-        ARTIST STATS
-        <span class="subheader">These are the stats for each artist across all rounds played regardless of player.</span>
-      </h3>
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Artist Name</th>
-            <th># Rounds Played</th>
-            <th>Avg Placement</th>
-            <th>Most Consecutive Rounds</th>
-            <th>Highest #1 Streak</th>
-            <th># Top Half Rounds</th>
-          </tr>
-        </thead>
-        <tbody>
-                      <tr>
-              <td>
-                <h5>
+          
+        <div class="tab-pane" id="tab-history">
+          Test history
+        </div>
+
+        <div class="tab-pane" id="tab-artists">
+          <h3>
+            CAN'T USE ARTISTS
+            <span class="subheader">These artists can't be used coming into the game at this time.</span>
+          </h3>
+          <div class="row">
+                          <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Billie Eilish</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Bjork</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704624902045757/cast_celine_dion.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Celine Dion</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785878541664306/cast_cherry_galzerr.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Cherry Glazerr</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Dreamcatcher</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Dua Lipa</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Florence + The Machine</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Grimes</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Jessie Reyez</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Kali Uchis</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">OneRepublic</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704662369730590/cast_pink.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">P!nk</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Panic! At The Disco</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Paramore</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">SZA</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">TWICE</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/957014230572343357/cast_the_story_so_far.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">The Story So Far</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">The Weeknd</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">Utada</h5>
+              </div>
+                            <div class="col-2 mt-5 text-center">
+                <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="largeAvatar">
+                <h5 class="mt-4 mb-4">majiko</h5>
+              </div>
+                        </div>
+        </div>
+
+
+        <div class="tab-pane" id="tab-songs">
+          <h3>
+            CAN'T USE SONGS
+            <span class="subheader">These songs can't be used in the game at this time.</span>
+          </h3>
+          <div class="row">
+                          <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
-                  Billie Eilish                </h5>
-              </td>
-              <td>2</td>
-              <td>2.50</td>
-              <td>2</td>
-              <td>0</td>
-              <td>2            </tr>
-                        <tr>
-              <td>
-                <h5>
-                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
-                  Bjork                </h5>
-              </td>
-              <td>2</td>
-              <td>12.50</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
-                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
-                  Dreamcatcher                </h5>
-              </td>
-              <td>2</td>
-              <td>14.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Billie Eilish                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Billie Bossa Nova                    </li>
+                                        <li>
+                      all the good girls go to hell                    </li>
+                                        <li>
+                      hostage                    </li>
+                                        <li>
+                      listen before i go                    </li>
+                                        <li>
+                      ocean eyes                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
+                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704624902045757/cast_celine_dion.png" class="smallAvatar">
+                  Celine Dion                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      I'm Alive                    </li>
+                                        <li>
+                      The Power Of Love                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
-                  Dua Lipa                </h5>
-              </td>
-              <td>2</td>
-              <td>6.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>1            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Dua Lipa                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Electricity                    </li>
+                                        <li>
+                      Golden Slumbers                    </li>
+                                        <li>
+                      Love Is Religion                    </li>
+                                        <li>
+                      One Kiss                    </li>
+                                        <li>
+                      Physical                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
-                  Florence + The Machine                </h5>
-              </td>
-              <td>2</td>
-              <td>8.50</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Florence + The Machine                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Hurricane Drunk                    </li>
+                                        <li>
+                      Never Let Me Go                    </li>
+                                        <li>
+                      Sky Full Of Song                    </li>
+                                        <li>
+                      Spectrum (Say My Name) Calvin Harris Remix                    </li>
+                                        <li>
+                      Stand By Me                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
-                  Grimes                </h5>
-              </td>
-              <td>2</td>
-              <td>4.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>2            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Grimes                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Butterfly                    </li>
+                                        <li>
+                      Delete Forever                    </li>
+                                        <li>
+                      IDORU                    </li>
+                                        <li>
+                      Kill V. Maim                    </li>
+                                        <li>
+                      Player Of Games                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
-                  Jessie Reyez                </h5>
-              </td>
-              <td>2</td>
-              <td>6.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>2            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Jessie Reyez                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      BEFORE LOVE CAME TO KILL US                    </li>
+                                        <li>
+                      Body Count                    </li>
+                                        <li>
+                      DOPE                    </li>
+                                        <li>
+                      FEELS LIKE HOME                    </li>
+                                        <li>
+                      Sola                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
-                  Kali Uchis                </h5>
-              </td>
-              <td>2</td>
-              <td>11.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Kali Uchis                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      10%                    </li>
+                                        <li>
+                      After The Storm                    </li>
+                                        <li>
+                      Meltin                    </li>
+                                        <li>
+                      aguardiente y limón                    </li>
+                                        <li>
+                      honey baby                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
-                  OneRepublic                </h5>
-              </td>
-              <td>2</td>
-              <td>9.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>1            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  OneRepublic                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      I Lived                    </li>
+                                        <li>
+                      If I Lose Myself - Alesso vs OneRepublic                    </li>
+                                        <li>
+                      Lullaby                    </li>
+                                        <li>
+                      Something I Need                    </li>
+                                        <li>
+                      Sunshine                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
+                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704662369730590/cast_pink.png" class="smallAvatar">
+                  P!nk                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Love Song                    </li>
+                                        <li>
+                      Raise Your Glass                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
+                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="smallAvatar">
+                  Panic! At The Disco                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Always                    </li>
+                                        <li>
+                      NO SUBMISSION                    </li>
+                                        <li>
+                      Northern Downpour                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
-                  Paramore                </h5>
-              </td>
-              <td>2</td>
-              <td>2.50</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2            </tr>
-                        <tr>
-              <td>
-                <h5>
-                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
-                  SZA                </h5>
-              </td>
-              <td>2</td>
-              <td>9.50</td>
-              <td>2</td>
-              <td>0</td>
-              <td>1            </tr>
-                        <tr>
-              <td>
-                <h5>
-                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
-                  TWICE                </h5>
-              </td>
-              <td>2</td>
-              <td>13.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Paramore                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Anklebiters                    </li>
+                                        <li>
+                      Hate To See Your Heart Break                    </li>
+                                        <li>
+                      Still into You                    </li>
+                                        <li>
+                      The Only Exception                    </li>
+                                        <li>
+                      When It Rains                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
+                  <img src="https://cdn.discordapp.com/attachments/946859642900869121/957014230572343357/cast_the_story_so_far.png" class="smallAvatar">
+                  The Story So Far                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Take Me As You Please                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
-                  The Weeknd                </h5>
-              </td>
-              <td>2</td>
-              <td>12.50</td>
-              <td>2</td>
-              <td>0</td>
-              <td>0            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  The Weeknd                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Crew Love                    </li>
+                                        <li>
+                      Earned It                    </li>
+                                        <li>
+                      I Feel It Coming                    </li>
+                                        <li>
+                      Rockin'                    </li>
+                                        <li>
+                      Take My Breath                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
-                  Utada                </h5>
-              </td>
-              <td>2</td>
-              <td>4.00</td>
-              <td>2</td>
-              <td>0</td>
-              <td>2            </tr>
-                        <tr>
-              <td>
-                <h5>
+                  Utada                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      Face My Fears                    </li>
+                                        <li>
+                      On And On                    </li>
+                                        <li>
+                      This Is Love                    </li>
+                                        <li>
+                      虹色バス                    </li>
+                                        <li>
+                      誰にも言わない                    </li>
+                                    </ul>
+              </div>
+                            <div class="col-3">
+                <h4 class="mt-5">
                   <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
-                  majiko                </h5>
-              </td>
-              <td>2</td>
-              <td>5.00</td>
-              <td>2</td>
-              <td>1</td>
-              <td>1            </tr>
-                    </tbody>
-      </table>
-      <hr>
-      <h3>
-        PLAYER STATS
-        <span class="subheader">These are the stats for each player across all rounds played. Does not update while playing.</span>
-      </h3>
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Player Name</th>
-            <th># Rounds Played</th>
-            <th>Avg Placement</th>
-            <th>Most Consecutive Rounds</th>
-            <th>Highest #1 Streak</th>
-            <th># Top Half Rounds</th>
-          </tr>
-        </thead>
-        <tbody>
-                  </tbody>
-      </table>
+                  majiko                </h4>
+                <ul class="mb-5">
+                                      <li>
+                      AM                    </li>
+                                        <li>
+                      Kimi Ni Saigo No Kuchizuke                    </li>
+                                        <li>
+                      Kitto Wasurenai                    </li>
+                                        <li>
+                      MONSTER PARTY                    </li>
+                                        <li>
+                      Morrow                    </li>
+                                    </ul>
+              </div>
+                        </div>
+        </div>
+
+        <div class="tab-pane" id="tab-artist-stats">
+          <h3>
+            ARTIST STATS
+            <span class="subheader">These are the stats for each artist across all rounds played regardless of player.</span>
+          </h3>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Artist Name</th>
+                <th># Rounds Played</th>
+                <th>Avg Placement</th>
+                <th>Most Consecutive Rounds</th>
+                <th>Highest #1 Streak</th>
+                <th># Top Half Rounds</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927728901337090/cast_billie_eilish.png" class="smallAvatar">
+                      Billie Eilish                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>4.20</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>5                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927656042078228/cast_bjork.png" class="smallAvatar">
+                      Bjork                    </h5>
+                  </td>
+                  <td>3</td>
+                  <td>13.33</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704624902045757/cast_celine_dion.png" class="smallAvatar">
+                      Celine Dion                    </h5>
+                  </td>
+                  <td>2</td>
+                  <td>5.50</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>1                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785878541664306/cast_cherry_galzerr.png" class="smallAvatar">
+                      Cherry Glazerr                    </h5>
+                  </td>
+                  <td>2</td>
+                  <td>14.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653301156470804/cast_dreamcatcher.png" class="smallAvatar">
+                      Dreamcatcher                    </h5>
+                  </td>
+                  <td>2</td>
+                  <td>14.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951652155016757349/cast_dua_lipa.png" class="smallAvatar">
+                      Dua Lipa                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>6.60</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>3                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951650920318505010/cast_florence.png" class="smallAvatar">
+                      Florence + The Machine                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>5.60</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>3                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927704779907122/cast_grimes.png" class="smallAvatar">
+                      Grimes                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>9.80</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>2                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927634718240768/cast_jessie_reyez.png" class="smallAvatar">
+                      Jessie Reyez                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>7.40</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>3                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951653414868250654/cast_kali_uchis.png" class="smallAvatar">
+                      Kali Uchis                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>9.40</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>1                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927680700383322/cast_one_republic.png" class="smallAvatar">
+                      OneRepublic                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>6.80</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>3                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/956704662369730590/cast_pink.png" class="smallAvatar">
+                      P!nk                    </h5>
+                  </td>
+                  <td>2</td>
+                  <td>6.00</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>1                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/953785932023214130/cast_panic_at_the_disco.png" class="smallAvatar">
+                      Panic! At The Disco                    </h5>
+                  </td>
+                  <td>3</td>
+                  <td>9.67</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>2                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951651537288044544/cast_paramore.png" class="smallAvatar">
+                      Paramore                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>4.20</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>4                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/952219472876425226/cast_sza.png" class="smallAvatar">
+                      SZA                    </h5>
+                  </td>
+                  <td>3</td>
+                  <td>9.33</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927776997441627/cast_twice.png" class="smallAvatar">
+                      TWICE                    </h5>
+                  </td>
+                  <td>2</td>
+                  <td>13.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/957014230572343357/cast_the_story_so_far.png" class="smallAvatar">
+                      The Story So Far                    </h5>
+                  </td>
+                  <td>1</td>
+                  <td>13.00</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951927754264301688/cast_the_weeknd.png" class="smallAvatar">
+                      The Weeknd                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>10.80</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951657361678950460/cast_hikaru_utada.png" class="smallAvatar">
+                      Utada                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>7.20</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>3                </tr>
+                                <tr>
+                  <td>
+                    <h5>
+                      <img src="https://cdn.discordapp.com/attachments/946859642900869121/951672194491097108/cast_majiko.png" class="smallAvatar">
+                      majiko                    </h5>
+                  </td>
+                  <td>5</td>
+                  <td>5.00</td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>3                </tr>
+                            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-pane" id="tab-player-stats">
+          <h3>
+            PLAYER STATS
+            <span class="subheader">These are the stats for each player across all rounds played. Does not update while playing.</span>
+          </h3>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Player Name</th>
+                <th># Rounds Played</th>
+                <th>Avg Placement</th>
+                <th>Most Consecutive Rounds</th>
+                <th>Highest #1 Streak</th>
+                <th># Top Half Rounds</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td><h5>Brian</h5></td>
+                  <td>3</td>
+                  <td>9.33</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1                </tr>
+                                <tr>
+                  <td><h5>Cinnamon</h5></td>
+                  <td>2</td>
+                  <td>14.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td><h5>Kevin</h5></td>
+                  <td>3</td>
+                  <td>13.33</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td><h5>Kitana</h5></td>
+                  <td>2</td>
+                  <td>14.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                                <tr>
+                  <td><h5>Shiamus</h5></td>
+                  <td>2</td>
+                  <td>13.00</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0                </tr>
+                            </tbody>
+          </table>
+        </div>
+      </div>
 
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+          <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("table").DataTable();
+      });
+    </script>
   </body>
 </html>
 
