@@ -194,7 +194,11 @@
           $("#rankingContainer").html(rowList);
           updateRemoveLinks();
           updateRanknums();
-          $("#output").val("Ranking\tSong\tScore\n");
+          $("#output").val("```\nRanking\tSong\tScore\n");
+          setTimeout(function(){
+            var currentVal = $("#output").val();
+            $("#output").val(currentVal + "```");
+          },500)
           $(".rankingRow").each(function(){
             var thisLine = "";
             var currentVal = $("#output").val();
