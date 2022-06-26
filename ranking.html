@@ -76,7 +76,7 @@
       <hr>
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <strong>Copy Pasteable Ouptput:</strong>
+          <strong>Copy Pasteable Output: <a href="javascript:void(0)" id="copyOutputLink">[copy]</a> </strong>
           <textarea id="output" class="form-control" style="height: 50vh"></textarea>
         </div>
       </div>
@@ -121,6 +121,11 @@
         $(document).on("click","#copyLink",function(){
           var linkText = $(this).attr("data-serialized");
           navigator.clipboard.writeText(linkText);
+        })
+
+        $(document).on("click","#copyOutputLink",function(){
+          var outputText = $("#output").val();
+          navigator.clipboard.writeText(outputText);
         })
 
         $(document).on("keyup change",".rankingRow input",function(){
