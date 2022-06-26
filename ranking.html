@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Billboards Music ORG Fair Ranking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style media="screen">
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
+      .rankingRow:nth-child(even){
+        background-color: #F7F5F5;
+      }
+      .rankingRow {
+        padding: 10px;
+        border: 1px solid #F4F4F4;
+      }
+    </style>
+  </head>
+  <body style="font-size: 0.8em">
+    <div class="container">
+      <div class="text-center">
+        <h1>Music Org Fair Rankings</h1>
+        <div class="col-md-6 offset-md-3">
+          Tired of having people complain about your judging (or your judges' judging) of songs being biased? This is a <b>Music Org Fair Ranking Tool</b> which weighs the theme relevancy higher than
+          the likeability of the song, giving a fair ranking and order as well as a copy/pastable print out for the judges to provide to you (tab-separated so they can be pasted into a spreadsheet easily as well).<br>
+          <div class="small text-muted">This tool is provided by <a href="https://discord.gg/7QssrPaPxG">Billboards Music ORG</a>.</div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <h4>How To Use:</h4>
+        - Add a row for each artist/song you're ranking. <br>
+        - Rank each song's theme relevancy out (x out of 10) and likeability (x out of 10).<br>
+        - If you need to stop and continue later you can do so using the copy link at the bottom.<br>
+        - When finished use the 'Calculate' button to calculate your rankings and get a copy/pastable version to give to your host.
+      </div>
+      <hr>
+
+      <form id="rankingContainer">
+        <div class="rankingRow">
+          <h4>Score: <span class="score">0</span> | Ranking: <span class="ranking">0</span></h4>
+          <div class="row">
+            <div class="col-md-4">
+              Artist Name
+              <input type="text" name="artist" class="form-control">
+            </div>
+            <div class="col-md-4">
+              Song Name
+              <input type="text" name="song" class="form-control">
+            </div>
+            <div class="col-md-2">
+              Theme Relevancy
+              <input type="number" min="1" max="10" step="0.25" name="relevancy" class="form-control">
+              <div class="small">
+                <a href="javascript:void(0)" class="text-danger removeRankingRow d-none" tabindex="-1">- Remove Row</a>
+              </div>
+            </div>
+            <div class="col-md-2">
+              Likeability
+              <input type="number" min="1" max="10" step="0.25" name="likeability" class="form-control">
+              <div class="small">
+                <a href="javascript:void(0)" class="text-success addRankingRow">+ Another Row</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="mt-2">
+        <a href="javascript:void(0)" data-serialized='' id="copyLink" class="btn btn-dark btn-sm m-2">Copy Link To View Rankings</a>
+        <a href="javascript:void(0)" id="calculateLink" class="btn btn-success btn-sm float-end m-2">Calculate</a>
+        <a href="javascript:void(0)" id="clearLink" class="btn btn-outline-danger btn-sm float-end m-2">Clear/Start Over</a>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <strong>Copy Pasteable Ouptput:</strong>
+          <textarea id="output" class="form-control" style="height: 50vh"></textarea>
+        </div>
+      </div>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        const urlParams = new URLSearchParams(window.location.search);
+        var alreadyInfo = urlParams.get('info');
+        if(alreadyInfo && alreadyInfo != ''){
+          alreadyInfo = JSON.parse(atob(alreadyInfo));
+          console.log(alreadyInfo);
+        }
+
+        var updateTimeout;
+        if(alreadyInfo){
+          var emptyHtml = $("#rankingContainer").html();
+          $("#rankingContainer").html("");
+          $.each(alreadyInfo,function(index,round){
+            $("#rankingContainer").append(emptyHtml);
+            $("#rankingContainer").find("input[name='artist']").last().val(round.artist);
+            $("#rankingContainer").find("input[name='song']").last().val(round.song);
+            $("#rankingContainer").find("input[name='relevancy']").last().val(round.relevancy);
+            $("#rankingContainer").find("input[name='likeability']").last().val(round.likeability);
+
+            clearTimeout(updateTimeout);
+            updateTimeout = setTimeout(function(){
+              $("input[name='relevancy']").trigger("change");
+            },300);
+          })
+          setTimeout(function(){
+            $("#calculateLink").trigger("click");
+          },1000);
+        }
+
+        $(document).on("click","#copyLink",function(){
+          var linkText = $(this).attr("data-serialized");
+          navigator.clipboard.writeText(linkText);
+        })
+
+        $(document).on("keyup change",".rankingRow input",function(){
+          var info = [];
+          $(document).find(".rankingRow").each(function(){
+            var thisInfo = {};
+            thisInfo.artist = $(this).find("input[name='artist']").val();
+            thisInfo.song = $(this).find("input[name='song']").val();
+            thisInfo.relevancy = parseFloat($(this).find("input[name='relevancy']").val());
+            thisInfo.likeability = parseFloat($(this).find("input[name='likeability']").val());
+            info.push(thisInfo);
+          })
+          console.log(info);
+          $("#copyLink").attr("data-serialized","https://billboardsorg.xyz/ranking.html?info="+btoa(JSON.stringify(info)));
+        })
+
+        $(document).on("click",".addRankingRow",function(){
+          var container = $(this).closest(".rankingRow");
+          var html = $(this).closest(".rankingRow").html();
+          var html = "<div class='rankingRow'>"+html+"</div>";
+          console.log(html);
+          $(html).insertAfter(container);
+          updateRemoveLinks();
+          $("input[name='relevancy']").trigger("change");
+        });
+
+        $(document).on("click",".removeRankingRow",function(){
+          $(this).closest(".rankingRow").remove();
+          updateRemoveLinks();
+        });
+
+        function updateRemoveLinks(){
+          $(".removeRankingRow").removeClass("d-none");
+          var count = $(".removeRankingRow").length;
+          if(count <= 1){
+            $(".removeRankingRow").addClass("d-none");
+          }
+        }
+
+        $(document).on("keyup change","input[name='relevancy'],input[name='likeability']",function(){
+          var row = $(this).closest(".rankingRow");
+          var relevancy = $(row).find("input[name='relevancy']").val();
+          var likeability = $(row).find("input[name='likeability']").val();
+          if(!relevancy || relevancy == ""){
+            relevancy = 0;
+          }
+          if(!likeability || likeability == ""){
+            likeability = 0;
+          }
+          relevancy = parseFloat(relevancy);
+          likeability = parseFloat(likeability);
+          var score = (relevancy * 3) + likeability;
+          score = score / 4;
+          $(row).find(".score").html(score);
+          $(row).attr("data-score",score);
+        });
+
+        function updateRanknums(){
+          count = 0;
+          $(document).find(".rankingRow").each(function(){
+            count++;
+            $(this).find(".ranking").html(count);
+          })
+        }
+
+        $(document).on("click","#calculateLink",function(){
+          var rowList = $(".rankingRow");
+          rowList.sort(function(a, b){
+              return $(b).data("score")-$(a).data("score")
+          });
+          $("#rankingContainer").html(rowList);
+          updateRemoveLinks();
+          updateRanknums();
+          $("#output").val("Ranking\tSong\tScore\n");
+          $(".rankingRow").each(function(){
+            var thisLine = "";
+            var currentVal = $("#output").val();
+            var thisLine = thisLine + $(this).find(".ranking").html() + "\t";
+            var thisLine = thisLine + $(this).find("input[name='artist']").val() + "\t";
+            var thisLine = thisLine + $(this).find("input[name='song']").val() + "\t";
+            var thisLine = thisLine + $(this).find(".score").html() + "\n";
+            $("#output").val(currentVal + thisLine);
+          });
+        })
+
+        $(document).on("click","#clearLink",function(){
+          if(confirm("Are you sure you want to clear?")){
+            window.location = "https://billboardsorg.xyz/ranking.html";
+          }
+          else {
+            return false;
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
