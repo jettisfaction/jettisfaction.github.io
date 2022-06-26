@@ -197,7 +197,7 @@
           $("#output").val("```\nRanking\tSong\tScore\n");
           setTimeout(function(){
             var currentVal = $("#output").val();
-            $("#output").val(currentVal + "```");
+            $("#output").val(currentVal + "```\n" + $("#copyLink").attr("data-serialized"));
           },500)
           $(".rankingRow").each(function(){
             var thisLine = "";
